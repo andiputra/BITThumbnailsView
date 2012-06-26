@@ -9,4 +9,4 @@ Coming Soon. For now, just look at the project.
 
 Future Improvements
 ---------------------
-Ability to edit and delete.
+Ability to edit and delete individual thumbnail.
