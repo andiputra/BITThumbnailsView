@@ -1,6 +1,12 @@
 BITThumbnailsView
 =================
 
-A scroll view that is really good at displaying a list of thumbnails. 
+The simple awesome way to display thumbnails. 
 
-Depending on the thumbnail size and margin, the view will resize itself. You can also set it to display thumbnails horizontally or vertically.
+How To Use It?
+----------------
+Coming Soon. For now, just look at the project.
+
+Future Improvements
+---------------------
+Ability to edit and delete.
