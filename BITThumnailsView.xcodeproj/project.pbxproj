@@ -1,0 +1,307 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BEA4C4421599D2F1003AB9C9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA4C4411599D2F1003AB9C9 /* UIKit.framework */; };
+		BEA4C4441599D2F1003AB9C9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA4C4431599D2F1003AB9C9 /* Foundation.framework */; };
+		BEA4C4461599D2F1003AB9C9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA4C4451599D2F1003AB9C9 /* CoreGraphics.framework */; };
+		BEA4C44C1599D2F1003AB9C9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEA4C44A1599D2F1003AB9C9 /* InfoPlist.strings */; };
+		BEA4C44E1599D2F1003AB9C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA4C44D1599D2F1003AB9C9 /* main.m */; };
+		BEA4C4521599D2F1003AB9C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA4C4511599D2F1003AB9C9 /* AppDelegate.m */; };
+		BEA4C4551599D2F1003AB9C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA4C4541599D2F1003AB9C9 /* ViewController.m */; };
+		BEA4C4581599D2F1003AB9C9 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEA4C4561599D2F1003AB9C9 /* ViewController_iPhone.xib */; };
+		BEA4C45B1599D2F1003AB9C9 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEA4C4591599D2F1003AB9C9 /* ViewController_iPad.xib */; };
+		BEA4C4671599E028003AB9C9 /* BITThumbnailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA4C4661599E028003AB9C9 /* BITThumbnailsView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BEA4C43D1599D2F1003AB9C9 /* BITThumnailsView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BITThumnailsView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEA4C4411599D2F1003AB9C9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BEA4C4431599D2F1003AB9C9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BEA4C4451599D2F1003AB9C9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BEA4C4491599D2F1003AB9C9 /* BITThumnailsView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BITThumnailsView-Info.plist"; sourceTree = "<group>"; };
+		BEA4C44B1599D2F1003AB9C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BEA4C44D1599D2F1003AB9C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BEA4C44F1599D2F1003AB9C9 /* BITThumnailsView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BITThumnailsView-Prefix.pch"; sourceTree = "<group>"; };
+		BEA4C4501599D2F1003AB9C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BEA4C4511599D2F1003AB9C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BEA4C4531599D2F1003AB9C9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BEA4C4541599D2F1003AB9C9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BEA4C4571599D2F1003AB9C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
+		BEA4C45A1599D2F1003AB9C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		BEA4C4651599E028003AB9C9 /* BITThumbnailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITThumbnailsView.h; sourceTree = "<group>"; };
+		BEA4C4661599E028003AB9C9 /* BITThumbnailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITThumbnailsView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BEA4C43A1599D2F1003AB9C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEA4C4421599D2F1003AB9C9 /* UIKit.framework in Frameworks */,
+				BEA4C4441599D2F1003AB9C9 /* Foundation.framework in Frameworks */,
+				BEA4C4461599D2F1003AB9C9 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BEA4C4321599D2F1003AB9C9 = {
+			isa = PBXGroup;
+			children = (
+				BEA4C4471599D2F1003AB9C9 /* BITThumnailsView */,
+				BEA4C4401599D2F1003AB9C9 /* Frameworks */,
+				BEA4C43E1599D2F1003AB9C9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BEA4C43E1599D2F1003AB9C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BEA4C43D1599D2F1003AB9C9 /* BITThumnailsView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BEA4C4401599D2F1003AB9C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BEA4C4411599D2F1003AB9C9 /* UIKit.framework */,
+				BEA4C4431599D2F1003AB9C9 /* Foundation.framework */,
+				BEA4C4451599D2F1003AB9C9 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BEA4C4471599D2F1003AB9C9 /* BITThumnailsView */ = {
+			isa = PBXGroup;
+			children = (
+				BEA4C4641599E028003AB9C9 /* BITThumbnailsView */,
+				BEA4C4501599D2F1003AB9C9 /* AppDelegate.h */,
+				BEA4C4511599D2F1003AB9C9 /* AppDelegate.m */,
+				BEA4C4531599D2F1003AB9C9 /* ViewController.h */,
+				BEA4C4541599D2F1003AB9C9 /* ViewController.m */,
+				BEA4C4561599D2F1003AB9C9 /* ViewController_iPhone.xib */,
+				BEA4C4591599D2F1003AB9C9 /* ViewController_iPad.xib */,
+				BEA4C4481599D2F1003AB9C9 /* Supporting Files */,
+			);
+			path = BITThumnailsView;
+			sourceTree = "<group>";
+		};
+		BEA4C4481599D2F1003AB9C9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BEA4C4491599D2F1003AB9C9 /* BITThumnailsView-Info.plist */,
+				BEA4C44A1599D2F1003AB9C9 /* InfoPlist.strings */,
+				BEA4C44D1599D2F1003AB9C9 /* main.m */,
+				BEA4C44F1599D2F1003AB9C9 /* BITThumnailsView-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEA4C4641599E028003AB9C9 /* BITThumbnailsView */ = {
+			isa = PBXGroup;
+			children = (
+				BEA4C4651599E028003AB9C9 /* BITThumbnailsView.h */,
+				BEA4C4661599E028003AB9C9 /* BITThumbnailsView.m */,
+			);
+			path = BITThumbnailsView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BEA4C43C1599D2F1003AB9C9 /* BITThumnailsView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEA4C45E1599D2F1003AB9C9 /* Build configuration list for PBXNativeTarget "BITThumnailsView" */;
+			buildPhases = (
+				BEA4C4391599D2F1003AB9C9 /* Sources */,
+				BEA4C43A1599D2F1003AB9C9 /* Frameworks */,
+				BEA4C43B1599D2F1003AB9C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BITThumnailsView;
+			productName = BITThumnailsView;
+			productReference = BEA4C43D1599D2F1003AB9C9 /* BITThumnailsView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BEA4C4341599D2F1003AB9C9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = BEA4C4371599D2F1003AB9C9 /* Build configuration list for PBXProject "BITThumnailsView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BEA4C4321599D2F1003AB9C9;
+			productRefGroup = BEA4C43E1599D2F1003AB9C9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BEA4C43C1599D2F1003AB9C9 /* BITThumnailsView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BEA4C43B1599D2F1003AB9C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEA4C44C1599D2F1003AB9C9 /* InfoPlist.strings in Resources */,
+				BEA4C4581599D2F1003AB9C9 /* ViewController_iPhone.xib in Resources */,
+				BEA4C45B1599D2F1003AB9C9 /* ViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BEA4C4391599D2F1003AB9C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEA4C44E1599D2F1003AB9C9 /* main.m in Sources */,
+				BEA4C4521599D2F1003AB9C9 /* AppDelegate.m in Sources */,
+				BEA4C4551599D2F1003AB9C9 /* ViewController.m in Sources */,
+				BEA4C4671599E028003AB9C9 /* BITThumbnailsView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BEA4C44A1599D2F1003AB9C9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEA4C44B1599D2F1003AB9C9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BEA4C4561599D2F1003AB9C9 /* ViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEA4C4571599D2F1003AB9C9 /* en */,
+			);
+			name = ViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		BEA4C4591599D2F1003AB9C9 /* ViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEA4C45A1599D2F1003AB9C9 /* en */,
+			);
+			name = ViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BEA4C45C1599D2F1003AB9C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BEA4C45D1599D2F1003AB9C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BEA4C45F1599D2F1003AB9C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BITThumnailsView/BITThumnailsView-Prefix.pch";
+				INFOPLIST_FILE = "BITThumnailsView/BITThumnailsView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BEA4C4601599D2F1003AB9C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BITThumnailsView/BITThumnailsView-Prefix.pch";
+				INFOPLIST_FILE = "BITThumnailsView/BITThumnailsView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BEA4C4371599D2F1003AB9C9 /* Build configuration list for PBXProject "BITThumnailsView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEA4C45C1599D2F1003AB9C9 /* Debug */,
+				BEA4C45D1599D2F1003AB9C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEA4C45E1599D2F1003AB9C9 /* Build configuration list for PBXNativeTarget "BITThumnailsView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEA4C45F1599D2F1003AB9C9 /* Debug */,
+				BEA4C4601599D2F1003AB9C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BEA4C4341599D2F1003AB9C9 /* Project object */;
+}
