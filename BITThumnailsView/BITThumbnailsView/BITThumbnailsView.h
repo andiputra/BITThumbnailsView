@@ -62,4 +62,9 @@ typedef enum {
 /** If paging is enabled, allows you to jump to a certain page by providing the page index. */
 - (void)jumpToPageAtIndex:(NSInteger)index;
 
+/** If paging is enabled, will return number of pages. 
+ * If paging is not enabled, will return 1.
+ */
+- (NSInteger)numberOfPages;
+
 @end

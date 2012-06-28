@@ -88,7 +88,7 @@
 
 - (void)jumpToPageAtIndex:(NSInteger)index
 {
-    if (!self.isPagingEnabled) {
+    if (![self isPagingEnabled]) {
         return;
     }
     CGPoint offset;
@@ -98,6 +98,18 @@
         offset = CGPointMake(0., self.frame.size.height * index);
     }
     self.contentOffset = offset;
+}
+
+- (NSInteger)numberOfPages
+{
+    if (_tDataSource && [_tDataSource conformsToProtocol:@protocol(BITThumbnailsViewDataSource)] && [_tDataSource respondsToSelector:@selector(numberOfItemsInScrollView)] && [self isPagingEnabled]) {
+        double totalNumberOfItems = (double)[_tDataSource numberOfItemsInScrollView];
+        double numberOfItemsOnPage = (double)_numberOfItemsForEachPage;
+        NSInteger numberOfPages = ceil(totalNumberOfItems/numberOfItemsOnPage);
+        
+        return numberOfPages;
+    }
+    return 1;
 }
 
 // Unfinished, private for now
@@ -139,14 +151,8 @@
 
 #pragma mark - Private Methods
 
-- (CGSize)contentSizeForSelectedType
+- (void)setupCalculationVariables
 {
-    CGSize contentSize;
-    CGFloat height = self.frame.size.height;
-    CGFloat width = self.frame.size.width;
-    
-    // 1. Check total number of items
-    NSInteger totalNumberOfItems = [_tDataSource numberOfItemsInScrollView];
     // 2. Check margin for each item. 
     // Add the left margin + right margin + item width. We'll get total width for each item.
     // Add the top margin + bottom margin + item height. We'll get total height for each item.
@@ -159,8 +165,19 @@
     // 3. Calculate the number of items that can fit on each page.
     // Number of items per page = number of items per row * number of items per column.
     _numberOfItemsForEachPage = _numberOfItemsForEachRow * _numberOfItemsForEachColumn;
-    // 4. When paging is enabled, contentSize.width would be: (total number of items/number of items per page) * frame width
-    double dbTotalNumberOfItems = (double)totalNumberOfItems;
+}
+
+- (CGSize)contentSizeForSelectedType
+{
+    CGSize contentSize;
+    CGFloat height = self.frame.size.height;
+    CGFloat width = self.frame.size.width;
+    
+    // 1. Check total number of items
+//    NSInteger totalNumberOfItems = [_tDataSource numberOfItemsInScrollView];
+
+    // Need to convert the integers to double in order for the ceil() function to return the correct value, not truncated one.
+    double dbTotalNumberOfItems = (double)[_tDataSource numberOfItemsInScrollView];
     double dbNumberOfItemsForEachPage = (double)_numberOfItemsForEachPage;
     NSInteger numberOfPages = ceil(dbTotalNumberOfItems / dbNumberOfItemsForEachPage);
     
@@ -332,4 +349,19 @@
         [_tDelegate scrollView:self didTapItemAtIndex:thumbnail.tag];
     }
 }
+
+#pragma mark - Accessors
+
+- (void)setThumbnailSize:(CGSize)thumbnailSize
+{
+    _thumbnailSize = thumbnailSize;
+    [self setupCalculationVariables];
+}
+
+- (void)setMargin:(BITMargin)margin
+{
+    _margin = margin;
+    [self setupCalculationVariables];
+}
+
 @end
