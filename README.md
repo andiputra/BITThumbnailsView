@@ -4,9 +4,11 @@ The simple awesome way to display thumbnails.
 
 Coming Soon. For now, just look at the project.
 
+## Most Recent Updates
++ Ability to query number of pages (based on number of items), when paging is enabled.
+
 ## Future Updates
 
 + Ability to edit and delete individual thumbnail.
 + Thumbnails alignment (left, right, center).
-+ Number of pages, for when paging is enabled.
 + Better code commenting.
