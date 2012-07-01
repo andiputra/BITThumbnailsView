@@ -97,7 +97,7 @@
     } else {
         offset = CGPointMake(0., self.frame.size.height * index);
     }
-    self.contentOffset = offset;
+    [self setContentOffset:offset animated:YES];
 }
 
 - (NSInteger)numberOfPages
