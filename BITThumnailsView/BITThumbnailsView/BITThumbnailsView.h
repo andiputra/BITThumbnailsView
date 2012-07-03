@@ -30,6 +30,18 @@ typedef enum {
     BITThumbnailsViewTypeVertical,
 } BITThumbnailsViewType;
 
+/** Left, center, and right alignment for BITThumbnailsViewTypeHorizontal.
+ * Top, middle, and bottom alignment for BITThumbnailsViewTypeVertical.
+ */
+typedef enum {
+    BITThumbnailsViewAlignmentLeft = 0,
+    BITThumbnailsViewAlignmentCenter,
+    BITThumbnailsViewAlignmentRight,
+    BITThumbnailsViewAlignmentTop = BITThumbnailsViewAlignmentLeft,
+    BITThumbnailsViewAlignmentMiddle = BITThumbnailsViewAlignmentCenter,
+    BITThumbnailsViewAlignmentBottom = BITThumbnailsViewAlignmentRight,
+} BITThumbnailsViewAlignment;
+
 @class BITThumbnailsView;
 @protocol BITThumbnailsViewDataSource <NSObject>
 
@@ -55,6 +67,7 @@ typedef enum {
 @property (unsafe_unretained, nonatomic) id<BITThumbnailsViewDataSource> tDataSource;
 @property (unsafe_unretained, nonatomic) id<BITThumbnailsViewDelegate> tDelegate;
 @property (unsafe_unretained, nonatomic) BITThumbnailsViewType type;
+@property (unsafe_unretained, nonatomic) BITThumbnailsViewAlignment alignment;
 
 /** You need to call this after you setup the thumbnail scroll view for now. */
 - (void)reloadThumbnailsScrollView;

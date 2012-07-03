@@ -40,6 +40,7 @@
 @synthesize numberOfItemsForEachPage = _numberOfItemsForEachPage;
 @synthesize widthWithMarginForEachItem = _widthWithMarginForEachItem;
 @synthesize heightWithMarginForEachItem = _heightWithMarginForEachItem;
+@synthesize alignment = _alignment;
 
 - (void)dealloc
 {
@@ -311,7 +312,24 @@
             columnIndex = index/(double)_numberOfItemsForEachColumn;
         }
         
-        positionX = (_margin.left * (columnIndex + 1)) + (_margin.right * columnIndex) + (_thumbnailSize.width * columnIndex) + pageWidth;
+        CGFloat additionalMargin = 0.;
+        switch (_alignment) {
+            case BITThumbnailsViewAlignmentLeft: {
+                break;
+            }
+            case BITThumbnailsViewAlignmentCenter: {
+                additionalMargin = (self.frame.size.width - (_numberOfItemsForEachRow * _widthWithMarginForEachItem))/2;
+                break;
+            }
+            case BITThumbnailsViewAlignmentRight: {
+                additionalMargin = self.frame.size.width - (_numberOfItemsForEachRow * _widthWithMarginForEachItem);
+                break;
+            }
+            default:
+                break;
+        }
+        
+        positionX = additionalMargin + (_margin.left * (columnIndex + 1)) + (_margin.right * columnIndex) + (_thumbnailSize.width * columnIndex) + pageWidth;
         positionY = (_margin.top * (rowIndex + 1)) + (_margin.bottom * rowIndex) + (_thumbnailSize.height * rowIndex);
         
     } else {
@@ -329,8 +347,25 @@
             rowIndex = index/(double)_numberOfItemsForEachRow;
         }
         
+        CGFloat additionalMargin = 0.;
+        switch (_alignment) {
+            case BITThumbnailsViewAlignmentLeft: {
+                break;
+            }
+            case BITThumbnailsViewAlignmentCenter: {
+                additionalMargin = (self.frame.size.height - (_numberOfItemsForEachColumn * _heightWithMarginForEachItem))/2;
+                break;
+            }
+            case BITThumbnailsViewAlignmentRight: {
+                additionalMargin = self.frame.size.height - (_numberOfItemsForEachColumn * _heightWithMarginForEachItem);
+                break;
+            }
+            default:
+                break;
+        }
+        
         positionX = (_margin.left * (columnIndex + 1)) + (_margin.right * columnIndex) + (_thumbnailSize.width * columnIndex);
-        positionY = (_margin.top * (rowIndex + 1)) + (_margin.bottom * rowIndex) + (_thumbnailSize.height * rowIndex) + pageHeight;
+        positionY = additionalMargin + (_margin.top * (rowIndex + 1)) + (_margin.bottom * rowIndex) + (_thumbnailSize.height * rowIndex) + pageHeight;
         
     }
     

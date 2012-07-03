@@ -26,8 +26,9 @@
     [super viewDidLoad];
     
     self.thumbnailsView.thumbnailSize = CGSizeMake(100., 120.);
-    self.thumbnailsView.margin = BITMarginMake(10., 0., 0., 10.);
+    self.thumbnailsView.margin = BITMarginMake(5., 5., 5., 5.);
     self.thumbnailsView.type = BITThumbnailsViewTypeHorizontal;
+    self.thumbnailsView.alignment = BITThumbnailsViewAlignmentCenter;
     self.thumbnailsView.pagingEnabled = YES;
     self.thumbnailsView.tDelegate = self;
     self.thumbnailsView.tDataSource = self;
