@@ -17,6 +17,7 @@
 @property (unsafe_unretained, nonatomic) NSInteger numberOfItemsForEachPage;
 @property (unsafe_unretained, nonatomic) CGFloat widthWithMarginForEachItem;
 @property (unsafe_unretained, nonatomic) CGFloat heightWithMarginForEachItem;
+@property (unsafe_unretained, nonatomic) CGFloat additionalMargin;
 
 - (void)initialize;
 - (CGSize)contentSizeForSelectedType;
@@ -41,6 +42,7 @@
 @synthesize widthWithMarginForEachItem = _widthWithMarginForEachItem;
 @synthesize heightWithMarginForEachItem = _heightWithMarginForEachItem;
 @synthesize alignment = _alignment;
+@synthesize additionalMargin = _additionalMargin;
 
 - (void)dealloc
 {
@@ -171,6 +173,28 @@
     // 3. Calculate the number of items that can fit on each page.
     // Number of items per page = number of items per row * number of items per column.
     _numberOfItemsForEachPage = _numberOfItemsForEachRow * _numberOfItemsForEachColumn;
+    
+    _additionalMargin = 0.;
+    switch (_alignment) {
+        case BITThumbnailsViewAlignmentCenter: {
+            if (_type == BITThumbnailsViewTypeHorizontal) {
+                _additionalMargin = (self.frame.size.width - (_numberOfItemsForEachRow * _widthWithMarginForEachItem))/2;
+            } else {
+                _additionalMargin = (self.frame.size.height - (_numberOfItemsForEachColumn * _heightWithMarginForEachItem))/2;
+            }
+            break;
+        }
+        case BITThumbnailsViewAlignmentRight: {
+            if (_type == BITThumbnailsViewTypeHorizontal) {
+                _additionalMargin = self.frame.size.width - (_numberOfItemsForEachRow * _widthWithMarginForEachItem);
+            } else {
+                _additionalMargin = self.frame.size.height - (_numberOfItemsForEachColumn * _heightWithMarginForEachItem);
+            }
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 - (CGSize)contentSizeForSelectedType
@@ -178,9 +202,6 @@
     CGSize contentSize;
     CGFloat height = self.frame.size.height;
     CGFloat width = self.frame.size.width;
-    
-    // 1. Check total number of items
-//    NSInteger totalNumberOfItems = [_tDataSource numberOfItemsInScrollView];
 
     // Need to convert the integers to double in order for the ceil() function to return the correct value, not truncated one.
     double dbTotalNumberOfItems = (double)[_tDataSource numberOfItemsInScrollView];
@@ -312,24 +333,7 @@
             columnIndex = index/(double)_numberOfItemsForEachColumn;
         }
         
-        CGFloat additionalMargin = 0.;
-        switch (_alignment) {
-            case BITThumbnailsViewAlignmentLeft: {
-                break;
-            }
-            case BITThumbnailsViewAlignmentCenter: {
-                additionalMargin = (self.frame.size.width - (_numberOfItemsForEachRow * _widthWithMarginForEachItem))/2;
-                break;
-            }
-            case BITThumbnailsViewAlignmentRight: {
-                additionalMargin = self.frame.size.width - (_numberOfItemsForEachRow * _widthWithMarginForEachItem);
-                break;
-            }
-            default:
-                break;
-        }
-        
-        positionX = additionalMargin + (_margin.left * (columnIndex + 1)) + (_margin.right * columnIndex) + (_thumbnailSize.width * columnIndex) + pageWidth;
+        positionX = _additionalMargin + (_margin.left * (columnIndex + 1)) + (_margin.right * columnIndex) + (_thumbnailSize.width * columnIndex) + pageWidth;
         positionY = (_margin.top * (rowIndex + 1)) + (_margin.bottom * rowIndex) + (_thumbnailSize.height * rowIndex);
         
     } else {
@@ -347,25 +351,8 @@
             rowIndex = index/(double)_numberOfItemsForEachRow;
         }
         
-        CGFloat additionalMargin = 0.;
-        switch (_alignment) {
-            case BITThumbnailsViewAlignmentLeft: {
-                break;
-            }
-            case BITThumbnailsViewAlignmentCenter: {
-                additionalMargin = (self.frame.size.height - (_numberOfItemsForEachColumn * _heightWithMarginForEachItem))/2;
-                break;
-            }
-            case BITThumbnailsViewAlignmentRight: {
-                additionalMargin = self.frame.size.height - (_numberOfItemsForEachColumn * _heightWithMarginForEachItem);
-                break;
-            }
-            default:
-                break;
-        }
-        
         positionX = (_margin.left * (columnIndex + 1)) + (_margin.right * columnIndex) + (_thumbnailSize.width * columnIndex);
-        positionY = additionalMargin + (_margin.top * (rowIndex + 1)) + (_margin.bottom * rowIndex) + (_thumbnailSize.height * rowIndex) + pageHeight;
+        positionY = _additionalMargin + (_margin.top * (rowIndex + 1)) + (_margin.bottom * rowIndex) + (_thumbnailSize.height * rowIndex) + pageHeight;
         
     }
     
@@ -401,6 +388,12 @@
 - (void)setMargin:(BITMargin)margin
 {
     _margin = margin;
+    [self setupCalculationVariables];
+}
+
+- (void)setAlignment:(BITThumbnailsViewAlignment)alignment
+{
+    _alignment = alignment;
     [self setupCalculationVariables];
 }
 
