@@ -88,6 +88,11 @@
 
 - (void)jumpToPageAtIndex:(NSInteger)index
 {
+    [self jumpToPageAtIndex:index animated:YES];
+}
+
+- (void)jumpToPageAtIndex:(NSInteger)index animated:(BOOL)animated
+{
     if (![self isPagingEnabled]) {
         return;
     }
@@ -97,7 +102,7 @@
     } else {
         offset = CGPointMake(0., self.frame.size.height * index);
     }
-    [self setContentOffset:offset animated:YES];
+    [self setContentOffset:offset animated:animated];
 }
 
 - (NSInteger)numberOfPages

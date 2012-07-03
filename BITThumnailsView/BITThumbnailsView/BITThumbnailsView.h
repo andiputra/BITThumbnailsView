@@ -60,7 +60,9 @@ typedef enum {
 - (void)reloadThumbnailsScrollView;
 
 /** If paging is enabled, allows you to jump to a certain page by providing the page index. */
+/** Animated by default. */
 - (void)jumpToPageAtIndex:(NSInteger)index;
+- (void)jumpToPageAtIndex:(NSInteger)index animated:(BOOL)animated;
 
 /** If paging is enabled, will return number of pages. 
  * If paging is not enabled, will return 1.
