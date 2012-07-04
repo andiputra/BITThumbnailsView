@@ -32,8 +32,6 @@
     self.thumbnailsView.pagingEnabled = YES;
     self.thumbnailsView.tDelegate = self;
     self.thumbnailsView.tDataSource = self;
-    
-    [self.thumbnailsView reloadThumbnailsScrollView];
 }
 
 - (void)viewDidUnload

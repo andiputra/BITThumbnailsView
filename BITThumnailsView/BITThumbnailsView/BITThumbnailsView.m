@@ -44,6 +44,8 @@
 @synthesize alignment = _alignment;
 @synthesize additionalMargin = _additionalMargin;
 
+#pragma mark - Initialization and Memory Management
+
 - (void)dealloc
 {
     [_visibleItems release], _visibleItems = nil;
@@ -78,6 +80,12 @@
     self.delegate = self;
     self.showsHorizontalScrollIndicator = NO;
     self.showsVerticalScrollIndicator = NO;
+}
+
+- (void)drawRect:(CGRect)rect
+{
+    [super drawRect:rect];
+    [self reloadThumbnailsScrollView];
 }
 
 #pragma mark - Public Methods
